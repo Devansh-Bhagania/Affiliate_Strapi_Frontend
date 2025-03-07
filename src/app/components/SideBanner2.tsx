@@ -26,13 +26,19 @@ const SideBannerA = (props:any) => {
   <div className=' mx-auto  flex flex-row justify-between gap-10'>
     <div className='md:w-[70%] flex flex-row gap-7 justify-between flex-wrap md:flex-no-wrap'>
            {
-                articles &&
+                articles ?
                 articles?.slice(0,2).map((article:any) => {
                      return (
-                          <BannerBox key={article.id} date={article.publishedAt} category={article.category.name} title={article.title} imgurl={article.imgurl}
+                          <BannerBox key={article.id} date={article.publishedAt} category={article?.category?.name} title={article.title} imgurl={article.imgurl}
                           description={article.blocks[0].body} />
                      )
                 })
+                :
+                <div className='w-[100%] h-[500px] flex justify-center items-center'>
+                <h1>
+                    Loading...
+                </h1>
+                </div>
            }
         </div>   
         <div className='md:w-[300px] h-[500px] mt-10 md:block hidden'>

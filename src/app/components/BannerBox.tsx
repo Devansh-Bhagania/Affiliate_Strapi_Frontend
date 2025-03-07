@@ -13,13 +13,16 @@ const BannerBox = (props:any) => {
                 |
             </p>
             <p className='font-[500]'>
-                {props.category}
+                {props?.category}
             </p>
 
            
         </div>
         <div>
-            <Image src={props.imgurl} width={800} height={190} alt='Product1' className='w-[100%]' />
+            {
+                props.imgurl && <Image src={props.imgurl} width={800} height={190} alt='Product1' className='w-[100%]' />
+            }
+            
         </div>
          <h2 className='text-[1.2rem] font-semibold'>
             {props.title}

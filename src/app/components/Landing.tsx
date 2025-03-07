@@ -19,6 +19,7 @@ const Landing = () => {
     }, [])
     
   return (
+   
     <div>
        
        <div className=' w-[100%] flex md:hidden flex-col -mb-10'>
@@ -56,13 +57,14 @@ const Landing = () => {
             <Blog category='Electronics' date='3 March, 2025' title='BestReviews Epic Discounts: Cleaning Essentials'/>
         </div>
         <div className='grow max-w-[700px]  '>
-           { articles &&
+           { articles ?
                 articles?.slice(0,1).map((article:any) => {
                      return (
                           <Product key={article.id} date={article.publishedAt} category={article.category.name} title={article.title} imgurl={article.imgurl}
                           description={article.blocks[0].body} />
                      )
                 })
+                : <p>Loading...</p>
            }
         </div>
 

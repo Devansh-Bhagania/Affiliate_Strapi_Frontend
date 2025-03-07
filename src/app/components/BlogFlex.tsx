@@ -24,13 +24,18 @@ const BlogFlex = (props:any) => {
     
   <div className=' mx-auto  flex flex-row justify-center flex-wrap md:flex-nowrap gap-10 grid-cols-1 md:grid-cols-3 '>
            {
-                articles &&
+                articles ?
                 articles?.slice(0,3).map((article:any) => {
                      return (
-                          <ProductBox key={article.id} date={article.publishedAt} category={article.category.name} title={article.title} imgurl={article.imgurl}
+                          <ProductBox key={article.id} date={article.publishedAt} category={article?.category?.name} title={article.title} imgurl={article.imgurl}
                           description={article.blocks[0].body} />
                      )
                 })
+                    :    <div className='w-[100%] h-[500px] flex justify-center items-center'>
+                    <h1>
+                        Loading...
+                    </h1>
+                    </div>
            }
   </div>
   </div>

@@ -19,7 +19,8 @@ const Product = (props:any) => {
            
         </div>
         <div>
-            <Image src={props.imgurl} width={300} height={300} alt='Product1' className='md:w-[100%] w-[310px] ' />
+            {props.imgurl && <Image src={props.imgurl} width={300} height={300} alt='Product1' className='md:w-[100%] w-[310px] ' />}
+         
         </div>
          <h2 className='text-[1.8rem] font-semibold'>
             {props.title}

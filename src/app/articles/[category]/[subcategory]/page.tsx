@@ -11,7 +11,7 @@ import SideBanner2 from '@/app/components/SideBanner2'
 import { useParams } from 'next/navigation'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
     const { category, subcategory } = useParams()
     console.log(category, subcategory)
   return (
@@ -32,4 +32,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

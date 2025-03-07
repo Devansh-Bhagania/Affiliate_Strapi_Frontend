@@ -4,6 +4,7 @@ import React from 'react'
 
 const ProductBox = (props:any) => {
   return (
+    props &&
     <div className='md:w-1/3   flex flex-col gap-2 py-3 border-b-2 border-gray-200'>
         <div className='flex text-sm flex-row gap-2 justify-start items-center'>
             <p className='font-[500]'>
@@ -13,13 +14,16 @@ const ProductBox = (props:any) => {
                 |
             </p>
             <p className='font-[500]'>
-                {props.category}
+                {props?.category}
             </p>
 
            
         </div>
         <div>
-            <Image src={props.imgurl} width={340} height={190} alt='Product1' className='w-[100%]' />
+                {
+                    props.imgurl && <Image src={props.imgurl} width={340} height={190} alt='Product1' className='w-[100%]' />
+                }
+         
         </div>
          <h2 className='text-[1.2rem] font-semibold'>
             {props.title}
