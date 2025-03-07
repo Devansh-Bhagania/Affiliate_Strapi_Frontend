@@ -3,14 +3,13 @@ import { useParams } from 'next/navigation'
 import React from 'react'
 
 const Page = () => {
-    const { category, subcategory, slug } = useParams()
-    console.log(category, subcategory, slug)
+    const { category } = useParams()
+    console.log(category)
   return (
     <div>
-        <h1>Article Page</h1>
+        <h1>Category Page</h1>
             <h1>{category}</h1>
-            <h1>{subcategory}</h1>
-            <h1>{slug}</h1>
+            
     </div>
   )
 }
