@@ -10,9 +10,11 @@ const Header = () => {
             <div className=' lg:hidden'>
                 <Menu size={20} />
             </div>
+            <a href="/" className=''>
             <h1 className='md:text-[2rem] text-[1rem] font-bold text-gray-800'>
                 LabelPadhegaIndia
             </h1>
+            </a>
             </div>
 
             <div className=' hidden lg:flex items-center p-3 justify-around gap-2 border-2 border-black px-2'>
