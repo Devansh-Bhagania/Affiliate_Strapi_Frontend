@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import product1 from '../../../public/product1.webp'
+
 
 const ProductArticle = (props:any) => {
   return (

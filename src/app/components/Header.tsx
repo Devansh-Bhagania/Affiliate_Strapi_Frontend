@@ -1,4 +1,4 @@
-import { Bell, Menu, Search, ShoppingBag, ShoppingBagIcon, ShoppingCartIcon } from 'lucide-react'
+import { Bell, Menu, Search, ShoppingBagIcon } from 'lucide-react'
 import React from 'react'
 
 const Header = () => {

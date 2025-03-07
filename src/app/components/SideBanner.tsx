@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import Product from './Product'
-import ProductBox from './ProductBox'
+
 import BannerBox from './BannerBox'
 import Deals from './Deals'
 

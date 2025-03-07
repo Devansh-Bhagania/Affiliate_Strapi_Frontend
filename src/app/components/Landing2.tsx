@@ -1,8 +1,8 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import Blog from './Blog'
+
 import Deals from './Deals'
-import Product from './Product'
+
 import Image from 'next/image'
 import ProductArticle from './ProductArticle'
 
