@@ -1,13 +1,13 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-const dynamic = require('next/dynamic')
-const BannerBox = dynamic(() => import('./BannerBox'))
+
 import Product from './Product'
 import ProductBox from './ProductBox'
 
 import Deals from './Deals'
+import BannerBox from './BannerBox'
 
-const SideBanner2 = (props:any) => {
+const SideBannerA = (props:any) => {
        const [articles, setArticles] = useState([])
         async function fetchdata() {
             const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
@@ -51,4 +51,4 @@ const SideBanner2 = (props:any) => {
   )
 }
 
-export default SideBanner2
+export default SideBannerA

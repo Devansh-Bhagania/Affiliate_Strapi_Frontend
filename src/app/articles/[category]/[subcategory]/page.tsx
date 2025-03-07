@@ -1,6 +1,7 @@
 "use client"
 import AboutUs from '@/app/components/AboutUs'
 import BlogFlex from '@/app/components/BlogFlex'
+import Categories from '@/app/components/Categories'
 import Footer from '@/app/components/Footer'
 import Header from '@/app/components/Header'
 import Landing from '@/app/components/Landing'
@@ -15,7 +16,8 @@ const page = () => {
     console.log(category, subcategory)
   return (
     <>
-
+<Header/>
+<Categories/>
     <Landing2/>
     <BlogFlex title="ELECTRONICS"/>
     <SideBanner title="BEAUTY PRODUCTS"/>
