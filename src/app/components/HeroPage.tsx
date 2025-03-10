@@ -19,9 +19,10 @@ const HeroPage = () => {
       <Categories/>
             <Landing/>
             <BlogFlex title="ELECTRONICS"/>
-            <SideBanner title="BEAUTY PRODUCTS"/>
-            <BlogFlex title="ELECTRONICS"/>
-            <SideBannerA title="BEAUTY PRODUCTS"/>
+            <SideBanner title="BEAUTY"/>
+            <BlogFlex title="COMPUTERS"/>
+            <BlogFlex title="HOMEDECOR"/>
+            <SideBanner title="BEAUTY"/>
             <BlogFlex title="ELECTRONICS"/>
             <AboutUs/>
             <Footer/>

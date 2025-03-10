@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
+import DOMPurify from 'dompurify';
+import ReactMarkdown from 'react-markdown'
 
 
 const Product = (props:any) => {
@@ -18,17 +20,22 @@ const Product = (props:any) => {
 
            
         </div>
-        <div>
-            {props.imgurl && <Image src={props.imgurl} width={300} height={300} alt='Product1' className='md:w-[100%] w-[310px] ' />}
+        <div className='md:w-[100%] relative w-[310px] '> 
+            {props.imgurl && <Image src={props.imgurl} alt='Product1' className='md:w-[100%] w-[310px] ' objectFit='contain' 
+            layout='responsive' width={310} height={310}
+            />}
          
         </div>
          <h2 className='text-[1.8rem] font-semibold'>
             {props.title}
             </h2>
-            <div dangerouslySetInnerHTML={
+            {/* <div dangerouslySetInnerHTML={
                 {__html:props.description.slice(0,200)}
-            } className=' text-gray-700 '/>
-            </div>
+            } className=' text-gray-700 '/> */}
+                <ReactMarkdown>
+                    {DOMPurify.sanitize(props.description.slice(0,180))}
+                </ReactMarkdown>
+            </div>  
     
   )
 }

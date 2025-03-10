@@ -27,7 +27,9 @@ const SideBannerA = (props:any) => {
     <div className='md:w-[70%] flex flex-row gap-7 justify-between flex-wrap md:flex-no-wrap'>
            {
                 articles ?
-                articles?.slice(0,2).map((article:any) => {
+                articles?.filter(
+                    (article:any) => article?.category?.name.toLowerCase() === props.title.toLowerCase()
+                ).map((article:any) => {
                      return (
                           <BannerBox key={article.id} date={article.publishedAt} category={article?.category?.name} title={article.title} imgurl={article.imgurl}
                           description={article.blocks[0].body} />
