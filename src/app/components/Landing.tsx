@@ -12,7 +12,7 @@ import { fetchArticles } from '../../../redux/articleSlice'
    ====================== */
 const SkeletonProduct = () => {
   return (
-    <div className="w-full min-w-[520px] border flex flex-col gap-3 border-gray-300 rounded-md p-4 animate-pulse">
+    <div className="w-full md:min-w-[520px] border flex flex-col gap-3 border-gray-300 rounded-md p-4 animate-pulse">
       {/* Image Placeholder */}
       <div className="w-[100%] h-64 bg-gray-300 rounded" />
       {/* Title Placeholder */}
