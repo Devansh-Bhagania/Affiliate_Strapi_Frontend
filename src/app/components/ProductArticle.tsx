@@ -4,8 +4,8 @@ import React from 'react'
 
 const ProductArticle = (props:any) => {
   return (
-    <div className='md:w-[100%] min-w-[310px] mt-10 md:mt-0  flex flex-col gap-2 py-3 border-b-2 border-gray-200'>
-        <div className='flex text-sm flex-row gap-2 justify-start items-center'>
+    <div className='md:w-[100%] min-w-[310px] mt-5 md:mt-0  flex flex-col gap-2 border-b-2 border-gray-200'>
+        <div className='flex text-md flex-row gap-2 justify-start items-center'>
             <p className='font-[500]'>
                 {new Date(props.date).toDateString()}   
             </p>
@@ -20,7 +20,7 @@ const ProductArticle = (props:any) => {
         </div>
         <div>
             {
-                props.imgurl && <Image src={props.imgurl} width={300} height={300} alt='Product1' className='md:w-[100%] w-[310px] ' />
+                props.imgurl && <Image src={props.imgurl} width={100} height={100} alt='Product1' className='md:w-[60%] w-[310px] ' layout='responsive'/>
             }
           
         </div>

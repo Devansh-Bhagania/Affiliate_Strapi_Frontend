@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import ProductBox from './ProductBox'
+import { useSelector } from 'react-redux'
 
 // Skeleton card component for loading state
 const SkeletonCard = () => {
@@ -17,28 +18,18 @@ const BlogFlex = (props: any) => {
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-
-  async function fetchData() {
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
-      if (!res.ok) {
-        throw new Error('Network response was not ok')
-      }
-      const data = await res.json()
-      setArticles(data.data)
-    } catch (err: any) {
-      console.error("Error fetching articles:", err)
-      setError(err.message)
-    } finally {
-      setLoading(false)
-    }
-  }
+  const reduxarticles = useSelector((state: any) => state.articles.data)
 
   useEffect(() => {
-    fetchData()
-  }, [])
+    if (reduxarticles.length > 0) {
+      setArticles(reduxarticles)
+      setLoading(false)
+    }
+  }, [reduxarticles])
+ 
 
-  const filteredArticles = articles.filter((article: any) =>
+
+  const filteredArticles = reduxarticles?.filter((article: any) =>
     article?.category?.name.toLowerCase() === props.title.toLowerCase()
   )
 
@@ -60,7 +51,7 @@ const BlogFlex = (props: any) => {
         </div>
       ) : filteredArticles.length > 0 ? (
         <div className="flex flex-col md:flex-row flex-wrap lg:flex-nowrap gap-10 grid-cols-1 md:grid-cols-3">
-          {filteredArticles.map((article: any) => (
+          {filteredArticles?.map((article: any) => (
             <ProductBox
               key={article.id}
               date={article.publishedAt}
@@ -68,6 +59,8 @@ const BlogFlex = (props: any) => {
               title={article.title}
               imgurl={article.imgurl}
               description={article.blocks[0].body}
+              slug={article.slug}
+    
             />
           ))}
         </div>

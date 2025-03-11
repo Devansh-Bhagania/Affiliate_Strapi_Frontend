@@ -3,6 +3,8 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Provider } from "react-redux";
+import Providers from "./components/Providers";
 
 
 
@@ -31,9 +33,9 @@ export default function RootLayout({
       <body
         className={`font-sans antialiased`}
       >
-    
+        <Providers>
         {children}
-     
+        </Providers>
       </body>
     </html>
   );

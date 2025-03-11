@@ -1,7 +1,8 @@
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
-const ProductBox = ({ date, category, imgurl, title, description }: any) => {
+const ProductBox = ({ date, category, imgurl, title, description,slug }: any) => {
   // If any key data is missing, you could render a simple skeleton fallback.
   if (!date || !category || !title || !description) {
     return (
@@ -13,17 +14,23 @@ const ProductBox = ({ date, category, imgurl, title, description }: any) => {
       </div>
     )
   }
-
+const router = useRouter()
   return (
-    <div className="md:w-1/3 flex flex-col gap-2 py-3 border-b-2 border-gray-200">
-      <div className="flex text-sm flex-row gap-2 justify-start items-center">
+    <div onClick={
+      ()=>{
+        router.push(`/articles/${category}/${slug}`)
+      }
+    } className="md:w-1/3 flex cursor-pointer flex-col gap-2 py-3 border-b-2 border-gray-200">
+      <div 
+       
+      className="flex text-sm hover:cursor-pointer flex-row gap-2 justify-start items-center">
         <p className="font-medium">
           {new Date(date).toDateString()}
         </p>
         <p>|</p>
         <p className="font-medium">{category}</p>
       </div>
-      <div>
+      <div   className=" hover:cursor-pointer">
         {imgurl ? (
           <Image
             src={imgurl}

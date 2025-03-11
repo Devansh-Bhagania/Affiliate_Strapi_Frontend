@@ -1,10 +1,15 @@
 "use client"
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import React from 'react'
 
 const Page = () => {
     const { category } = useParams()
     console.log(category)
+
+    const router = useRouter()
+    
+        router.push('/')
+  
   return (
     <div>
         <h1>Category Page</h1>

@@ -5,20 +5,30 @@ import Deals from './Deals'
 
 import Image from 'next/image'
 import ProductArticle from './ProductArticle'
+import { useSelector } from 'react-redux'
 
-const Landing2 = () => {
+const Landing2 = (props) => {
     const [articles, setArticles] = useState([])
     async function fetchdata() {
         const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
         const data = await res.json()
-        setArticles(data.data)
+        // setArticles(data.data)
         console.log(data)
     }
 
+    const reduxarticle = useSelector((state:any) => state.articles.data)
+
     useEffect(() => {
-     fetchdata()
-    }, [])
-    
+        if (reduxarticle.length > 0) {
+            setArticles(reduxarticle.filter((article) => article.slug === props.data))
+        }
+    }, [reduxarticle])
+
+
+
+
+   
+
   return (
     <div>
        
@@ -57,14 +67,23 @@ const Landing2 = () => {
             <Blog category='Electronics' date='3 March, 2025' title='BestReviews Epic Discounts: Cleaning Essentials'/>
         </div> */}
         <div className='grow max-w-[700px]  '>
-           { articles &&
+           {/* { articles &&
                 articles?.slice(0,1).map((article:any) => {
                      return (
                           <ProductArticle key={article.id} date={article.publishedAt} category={article.category.name} title={article.title} imgurl={article.imgurl}
                           description={article.blocks[0].body} />
                      )
                 })
-           }
+           } */}
+            {
+                articles &&
+                articles?.map((article: any) => {
+                    return (
+                        <ProductArticle key={article.id} date={article.publishedAt} category={article.category.name} title={article.title} imgurl={article.imgurl}
+                            description={article.blocks[0].body} />
+                    )
+                })
+            }
         </div>
 
         <div className='min-w-[300px] h-[500px] mt-10 md:mt-0'>

@@ -1,5 +1,5 @@
 "use client"
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // Async thunk to fetch articles
 export const fetchArticles = createAsyncThunk(
@@ -26,22 +26,16 @@ const initialState: ArticleState = {
 const articlesSlice = createSlice({
   name: 'articles',
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchArticles.pending, (state) => {
-        state.loading = true
-        state.error = null
-      })
-      .addCase(fetchArticles.fulfilled, (state, action) => {
-        state.loading = false
-        state.data = action.payload
-      })
-      .addCase(fetchArticles.rejected, (state, action) => {
-        state.loading = false
-        state.error = action.error.message || 'Failed to fetch articles'
-      })
-  },
+  reducers: {
+    addCase(state, action) {
+      state.data = action.payload
+    }
+  }
 })
+
+
+// Export the reducer
+export const { addCase } = articlesSlice.actions
+
 
 export default articlesSlice.reducer
