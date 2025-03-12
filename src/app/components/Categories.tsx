@@ -20,7 +20,7 @@ const categoriesData = [
       ],
     },
     {
-      name: "Kitchen",
+      name: "Computers",
       subcategories: [
         {
           title: "Bakeware & Baking Tools",
@@ -41,7 +41,20 @@ const categoriesData = [
       ],
     },
     {
-      name: "Lawn & Garden",
+      name: "Home Decor",
+      subcategories: [
+        {
+          title: "Outdoor Tools",
+          items: ["Lawnmowers", "Leaf Blowers", "Trimmers"],
+        },
+        {
+          title: "Gardening",
+          items: ["Planters", "Gardening Tools", "Fertilizers"],
+        },
+      ],
+    },
+    {
+      name: "Fashion",
       subcategories: [
         {
           title: "Outdoor Tools",

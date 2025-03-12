@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
+import DOMPurify from 'dompurify'
 
 
 const ProductArticle = (props:any) => {
@@ -27,10 +29,10 @@ const ProductArticle = (props:any) => {
          <h2 className='text-[1.8rem] font-semibold'>
             {props.title}
             </h2>
-            <div dangerouslySetInnerHTML={
-                {__html:props.description}
-            } className=' text-gray-700 '/>
-            </div>
+            <ReactMarkdown>
+                   {props.description}
+                </ReactMarkdown>
+    </div>
     
   )
 }

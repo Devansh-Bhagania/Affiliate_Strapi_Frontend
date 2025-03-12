@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -71,12 +72,14 @@ const Footer = () => {
                                         <p>
                                         Contact
                                         </p>
-                                        <p>
+                                        <Link href='/privacypolicy'>
+                                        
                                         Privacy Policy
-                                         </p>
-                                        <p>
-                                        Terms of Service
-                                        </p>       
+                                        </Link>
+                                        <Link href='/termsandconditions'>
+                                        
+                                        Terms and Conditions
+                                        </Link>     
                                     </div>
                             </div>
 

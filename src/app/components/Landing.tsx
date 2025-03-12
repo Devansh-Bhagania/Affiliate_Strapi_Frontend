@@ -6,13 +6,14 @@ import Product from './Product'
 import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import { fetchArticles } from '../../../redux/articleSlice'
+import { useRouter } from 'next/navigation'
 
 /* ======================
    SKELETON COMPONENT
    ====================== */
 const SkeletonProduct = () => {
   return (
-    <div className="w-full md:min-w-[520px] border flex flex-col gap-3 border-gray-300 rounded-md p-4 animate-pulse">
+    <div className="w-[100%] md:min-w-[520px] border flex flex-col gap-3 border-gray-300 rounded-md p-4 animate-pulse">
       {/* Image Placeholder */}
       <div className="w-[100%] h-64 bg-gray-300 rounded" />
       {/* Title Placeholder */}
@@ -50,7 +51,7 @@ const Landing = () => {
 
   // Filter for the main article
   const mainArticle = articles.find((article) => article.slug === 'home_makeover_days')
-
+const router = useRouter()
   return (
     <div>
       {/* Mobile Hero Banner */}
@@ -64,7 +65,13 @@ const Landing = () => {
         />
         <div className="w-[300px] text-center mt-5 mx-auto flex flex-col items-center justify-center gap-2">
           <h1>FLAT 20% OFF ON ALL BEAUTY PRODUCTS</h1>
-          <button className="bg-amber-400 text-white px-5 py-2">
+          <button
+            onClick={
+              () => {
+               router.push('https://www.amazon.in/s?k=bed+sheets&crid=2JCL3SAYIAT3M&sprefix=bed+sheets%2Caps%2C258&ref=nb_sb_noss_1')
+              }
+            }
+          className="bg-amber-400 text-white px-5 py-2">
             SHOP NOW
           </button>
         </div>
@@ -74,7 +81,7 @@ const Landing = () => {
       <div className="px-2 md:px-0 flex flex-row justify-between pt-10 grid-cols-2 md:grid-cols-2 lg:w-[80%] mx-auto md:gap-10 gap-5  md:flex-nowrap flex-wrap">
 
         {/* Left Column: THE LATEST */}
-        <div className="min-w-[300px] h-[500px] md:mt-0 mt-10">
+        <div className="min-w-[280px] h-[500px] md:mt-0 mt-10">
           <div className="h-[2px] w-[50px] bg-amber-400"></div>
           <h1 className="text-[1.5rem] font-semibold">THE LATEST</h1>
           <Blog category="Electronics" date="3 March, 2025" title="The Best Samsung Smart TV Deals" />
@@ -100,6 +107,7 @@ const Landing = () => {
                   title={article.title}
                   imgurl={article.imgurl}
                   description={article.blocks[0].body}
+                  slug={article.slug}
                 />
               ))
           )}

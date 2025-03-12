@@ -5,9 +5,18 @@ import product1 from '../../../public/product1.webp'
 import product2 from '../../../public/product2.webp'
 import product3 from '../../../public/product3.webp'
 import product4 from '../../../public/product4.webp'
+import { useRouter } from 'next/navigation'
 const Deals = (props:any) => {
+    const router = useRouter()
   return (
-    <div className='w-[100%]  py-2 border-b-2 border-gray-200'>
+    <div
+    onClick={
+        ()=>{
+         router.push(`https://www.amazon.in/gp/new-releases/?ref_=nav_em_cs_newreleases_0_1_1_3`)
+
+    }
+}
+    className='w-[100%]  py-2 border-b-2 border-gray-200'>
         <div className='flex text-sm flex-row gap-2 justify-start items-center'>
             <p className='font-[500]'>
                 {props.date}

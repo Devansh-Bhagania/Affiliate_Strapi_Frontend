@@ -1,7 +1,9 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Blog = (props:any) => {
   return (
+    <Link href={`/articles/${props.category}/${props.slug}`}>
     <div className='w-[100%]  py-3 border-b-2 border-gray-200'>
         <div className='flex text-sm flex-row gap-2 justify-start items-center'>
             <p className='font-[500]'>
@@ -20,6 +22,7 @@ const Blog = (props:any) => {
             {props.title}
             </h2>
     </div>
+    </Link>
   )
 }
 
