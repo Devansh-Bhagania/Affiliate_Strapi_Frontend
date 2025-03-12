@@ -111,9 +111,7 @@ const Categories = () => {
                           <li key={itemIdx}>
                             {/* Example Next.js Link to a dynamic route */}
                             <Link
-                              href={`/articles/${category.name.toLowerCase()}/${item
-                                .toLowerCase()
-                                .replace(/\s+/g, "-")}`}
+                              href={`/articles/computers/tuf_gamimg_laptop`}
                             >
                               <span className="cursor-pointer font-normal text-md hover:text-blue-600">
                                 {item}
