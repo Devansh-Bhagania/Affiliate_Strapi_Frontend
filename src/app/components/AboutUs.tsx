@@ -6,7 +6,7 @@ const AboutUs = () => {
     <div className='flex flex-col bg-[#040f3d] text-white  items-center justify-start min-h-screen overflow-x-hidden'>
             <div className='lg:w-[80%] mx-auto flex flex-col items-center justify-center p-10 gap-10'>
                     <h1 className='text-[2rem] font-[500]'>
-                    What is Botanic Reviews?
+                    Who is Label India
                     </h1>
                     <p className='lg:text-[1.8rem] lg:w-[50%]  text-center'>
                     Our team of <span className='text-amber-300'>experts</span> and <span className='text-amber-300'>testers</span> review and recommend the best products so you can easily find the right ones for your needs and budget.
@@ -17,7 +17,7 @@ const AboutUs = () => {
                     </div>
 
                     <p className='lg:text-[1.5rem] text-xl lg:w-[80%] mt-10  text-center'>
-                    At Botanic Reviews we do our own <span className='text-amber-300'>testing</span>. Each product that comes through our Testing Lab receives a hands-on evaluation by one of our skilled testers.
+                    At Labelpadhegaindia we do our own <span className='text-amber-300'>testing</span>. Each product that comes through our Testing Lab receives a hands-on evaluation by one of our skilled testers.
                     </p>
 
 

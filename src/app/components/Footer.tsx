@@ -8,12 +8,12 @@ const Footer = () => {
         <footer className='lg:w-[80%] mx-auto  flex flex-row flex-wrap items-start justify-between px-5  lg:p-10'>
                     <div className='lg:w-[30%] min-w-[310px] flex flex-col gap-5'>
                           <h1 className='text-[2rem] font-semibold'>
-                          Botanic Reviews
+                          Label Padhega India
                             </h1>
                         <div>
                             
                             <p>
-                            Botanic Reviews is a product review site that reviews and recommends the best products so you can easily find the right ones for your needs and budget.
+                            Label Padhega India is a product review site that reviews and recommends the best products so you can easily find the right ones for your needs and budget.
                             </p>
                         </div>
                         <div>
