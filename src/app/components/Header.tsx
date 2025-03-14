@@ -18,7 +18,7 @@ const Header = () => {
           {/* Hamburger Menu Icon (only visible on small screens) */}
           <a href="/" className="">
             <h1 className="md:text-[2rem] text-[1.2rem] font-bold text-gray-800">
-              LabelPadhegaIndia
+              Botanic Reviews
             </h1>
           </a>
           <div className="lg:hidden cursor-pointer" onClick={handleMenuToggle}>
