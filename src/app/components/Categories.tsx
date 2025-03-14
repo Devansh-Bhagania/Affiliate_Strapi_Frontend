@@ -70,7 +70,7 @@ const categoriesData = [
   ];
 const Categories = () => {
   return (
-    <div className="w-full bg-[#07630b] text-white hidden lg:block">
+    <div className="w-full bg-[#071063] text-white hidden lg:block">
       {/* Main container for the nav bar */}
       <div className="md:w-[80%] mx-auto flex items-center justify-between p-3 px-5 text-lg font-medium">
         
