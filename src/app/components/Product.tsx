@@ -10,7 +10,7 @@ const Product = (props:any) => {
     const router = useRouter()
 
   return (
-    <Link href={`/articles/${props.category}/${props.slug}`}>
+    <Link href={`/articles/${props.slug}`}>
     <div
  
 

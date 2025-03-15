@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import { fetchArticles } from '../../../redux/articleSlice'
 import { useRouter } from 'next/navigation'
+import data from '../../../data.json'
 
 /* ======================
    SKELETON COMPONENT
@@ -33,16 +34,18 @@ const Landing = () => {
   // Fetch data
   async function fetchdata() {
     setLoading(true)
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
-      const data = await res.json()
-      setArticles(data.data)
+    setArticles(data.data)
+    
+    // try {
+    //   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
+    //   const data = await res.json()
+    //   setArticles(data.data)
 
-    } catch (error) {
-      console.error(error)
-    } finally {
+    // } catch (error) {
+    //   console.error(error)
+    // } finally {
       setLoading(false)
-    }
+    // }
   }
 
   useEffect(() => {
@@ -85,7 +88,9 @@ const router = useRouter()
           <div className="h-[2px] w-[50px] bg-amber-400"></div>
           <h1 className="text-[1.5rem] font-semibold">THE LATEST</h1>
           <Blog category="Electronics" date="3 March, 2025" title="The Best Samsung Smart TV Deals" />
-          <Blog category="Category" date="3 March, 2025" title="Amazon Big Spring Deals Coming this week!" />
+          <Blog category="Category" date="3 March, 2025" title="Amazon Big Spring Deals Coming this week!" 
+            slug="buy_boat_headphones"
+          />
           <Blog category="Electronics" date="3 March, 2025" title="Amazon Popular Basics lugggage Now available" />
           <Blog category="Electronics" date="3 March, 2025" title="BestReviews Epic Discounts: Cleaning Essentials" />
           <Blog category="Electronics" date="3 March, 2025" title="BestReviews Epic Discounts: Cleaning Essentials" />

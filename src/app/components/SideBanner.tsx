@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import BannerBox from './BannerBox'
 import Deals from './Deals'
+import data from '../../../data.json'
 
 
 const SkeletonBannerBox = () => {
@@ -20,24 +21,30 @@ const SkeletonBannerBox = () => {
   }
 
 const SideBanner = (props: any) => {
-  const [articles, setArticles] = useState([])
+  const [articles, setArticles] = useState<any>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   async function fetchData() {
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
-      if (!res.ok) {
-        throw new Error('Network response was not ok')
-      }
-      const data = await res.json()
-      setArticles(data.data)
-    } catch (err: any) {
-      console.error("Error fetching articles:", err)
-      setError(err.message)
-    } finally {
-      setLoading(false)
-    }
+    setLoading(true)
+    setArticles(data.data)
+    setLoading(false)
+    
+
+
+    // try {
+    //   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
+    //   if (!res.ok) {
+    //     throw new Error('Network response was not ok')
+    //   }
+    //   const data = await res.json()
+    //   setArticles(data.data)
+    // } catch (err: any) {
+    //   console.error("Error fetching articles:", err)
+    //   setError(err.message)
+    // } finally {
+    //   setLoading(false)
+    // }
   }
 
   useEffect(() => {

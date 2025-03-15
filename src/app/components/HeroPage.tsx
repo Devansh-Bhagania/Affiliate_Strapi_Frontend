@@ -13,6 +13,7 @@ import SideBannerA from './SideBanner2'
 import Landing from './Landing'
 import { useDispatch } from 'react-redux'
 import { addCase } from '../../../redux/articleSlice'
+import data from '../../../data.json'
 
 const HeroPage = () => {
 
@@ -22,16 +23,18 @@ const HeroPage = () => {
   // Fetch data
   async function fetchdata() {
     setLoading(true)
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
-      const data = await res.json()
-      setArticles(data.data)
-      dispatch(addCase(data.data))
-    } catch (error) {
-      console.error(error)
-    } finally {
+    setArticles(data.data)
+    dispatch(addCase(data.data))
+    // try {
+    //   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
+    //   const data = await res.json()
+    //   setArticles(data.data)
+    //   dispatch(addCase(data.data))
+    // } catch (error) {
+    //   console.error(error)
+    // } finally {
       setLoading(false)
-    }
+    // }
   }
 
   useEffect(() => {

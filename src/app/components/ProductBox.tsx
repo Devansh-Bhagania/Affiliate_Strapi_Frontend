@@ -18,7 +18,7 @@ const router = useRouter()
   return (
     <div onClick={
       ()=>{
-        router.push(`/articles/${category}/${slug}`)
+        router.push(`/articles/${slug}`)
       }
     } className="md:w-1/3 flex cursor-pointer flex-col gap-2 py-3 border-b-2 border-gray-200">
       <div 

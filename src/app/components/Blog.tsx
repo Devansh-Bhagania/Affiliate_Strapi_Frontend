@@ -3,7 +3,7 @@ import React from 'react'
 
 const Blog = (props:any) => {
   return (
-    <Link href={`/articles/${props.category}/${props.slug}`}>
+    <Link href={`/articles/${props.slug || `buy_boat_headphones`}`}>
     <div className='w-[100%]  py-3 border-b-2 border-gray-200'>
         <div className='flex text-sm flex-row gap-2 justify-start items-center'>
             <p className='font-[500]'>

@@ -6,15 +6,11 @@ import Deals from './Deals'
 import Image from 'next/image'
 import ProductArticle from './ProductArticle'
 import { useSelector } from 'react-redux'
+import data from '../../../data.json'
 
 const Landing2 = (props) => {
     const [articles, setArticles] = useState([])
-    async function fetchdata() {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles?populate=*`)
-        const data = await res.json()
-        // setArticles(data.data)
-        console.log(data)
-    }
+   
 
     const reduxarticle = useSelector((state:any) => state.articles.data)
 
