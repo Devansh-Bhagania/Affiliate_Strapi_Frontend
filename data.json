@@ -490,6 +490,45 @@
             ]
         },
         {
+            "id": 77,
+            "documentId": "fit8x2pjhqnn4yfrta72eig9",
+            "title": "Resistance Band Set & Exercise Bands for Workout",
+            "description": "Resistance Band Set & Exercise Bands for Workout",
+            "slug": "resistance_band",
+            "imgurl": "https://m.media-amazon.com/images/I/71FFRz1RN6L._SX679_.jpg",
+            "affiliatelink": null,
+            "createdAt": "2025-03-21T05:58:11.070Z",
+            "updatedAt": "2025-03-21T06:00:25.208Z",
+            "publishedAt": "2025-03-21T06:00:28.133Z",
+            "cover": null,
+            "author": {
+                "id": 1,
+                "documentId": "whokqc15zfvgzztnyjwvljit",
+                "name": "David Doe",
+                "email": "daviddoe@strapi.io",
+                "createdAt": "2025-03-07T04:29:06.621Z",
+                "updatedAt": "2025-03-07T04:29:06.621Z",
+                "publishedAt": "2025-03-07T04:29:06.467Z"
+            },
+            "category": {
+                "id": 8,
+                "documentId": "ufd1o8u8hvfgepf8icrpgagq",
+                "name": "homedecor",
+                "slug": "home_decor",
+                "description": "Home Decor",
+                "createdAt": "2025-03-07T04:36:12.968Z",
+                "updatedAt": "2025-03-11T19:16:17.629Z",
+                "publishedAt": "2025-03-11T19:16:16.774Z"
+            },
+            "blocks": [
+                {
+                    "__component": "shared.rich-text",
+                    "id": 106,
+                    "body": "RESISTANCE BAND with 1 YEAR WARRANTY: Made From Latex and Available in 5 Levels of Resistance Strength The Slovic Rubber Bands are available in the X-light, Light, Medium, Heavy, and X-heavy Sizes\nEXERCISE MANUAL PROVIDED: An e-book with more than 30 workouts and workout variants targeting all main muscle groups is included with the resistance band set.\nTAKE YOUR WORKOUTS TO THE NEXT LEVEL: Resistance Bands Have A Place In Your Home Gym Whether You Are A Beginner Or An Expert Exercise bands can be used for a variety of exercises, including pull-ups, shoulder, chest, and leg raises, just like weights.\nWORKOUT EFFECTIVENESS: Fitness bands and loop resistance bands can be used for a variety of exercises, including hip and glute activation. Stretching, shoulder, leg, chest, biceps, and other exercises can be performed using this resistance tube and toning bands in the gym.\nMULTIPURPOSE: The Exercise / Workout Stretching Band, Bands are useful for physical therapy, recovery, and mobility enhancement. They can be used to exercise many muscle groups, including the arms, chest, abdomen, glutes, and legs. This loop band is suitable for home and gym workouts for men, women, boys, and girls.\nBETTER FOR YOUR BODY: Using Our Resistance Bands For Just 15-20 Minutes Per Day Produces Consistent Progress! Toning Bands For Performing Several Exercises\n\n[**Buy This Resistance Band**](https://amzn.to/4kLHQje)  \n*(Affiliate Link: By purchasing through this link, you support our website at no extra cost to you.)*\n"
+                }
+            ]
+        },
+        {
             "id": 59,
             "documentId": "fvbnplibyy4f1odgecem4tvf",
             "title": "What's inside a Black Hole",
@@ -940,6 +979,13 @@
                 }
             ]
         }
-    ]
-   
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 15
+        }
+    }
 }
